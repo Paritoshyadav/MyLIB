@@ -1,3 +1,4 @@
+//8mhk7c4gtdAE26Nb
 if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config()
 }
