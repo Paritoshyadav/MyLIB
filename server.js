@@ -10,7 +10,7 @@ const expressLayouts= require('express-ejs-layouts')
 const indexRouter = require('./routes/index')
 
 const mongoose = require('mongoose')
-
+const authorRouter = require('./routes/authors')
 
 
 const app = express()
@@ -19,6 +19,7 @@ app.set('views',__dirname+'/views')
 app.set('layout','layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
+app.use(express.urlencoded({limit: '10mb', extended: false}))
 
 
 mongoose.connect(process.env.DATABASE_URL,{
@@ -31,6 +32,7 @@ db.once('open',()=>console.log('Connected to mongoos'))
 
 
 app.use('/', indexRouter)
+app.use('/authors', authorRouter)
 
 
 
