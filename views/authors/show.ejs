@@ -6,9 +6,13 @@
         </div>
 <% if (booksbyAuthor.length > 0) {%>
     <h2 class="page-header">Books By Author</h2>
+    <% bookCoverClass = locals.large ? 'book-cover-large' : '' %>
+    <% bookGridClass = locals.large ? 'book-grid-large' : '' %>
+    <div class="book-grid <%= bookGridClass %>">
     <% booksbyAuthor.forEach(book=>{  %>
         <a href="/books/<%=book.id%>">
-        <img height="150" width="100" src="<%= book.coverImagePath %>">
+        <img class="book-cover" src="<%= book.coverImagePath %>">
         </a>
         <% }) %>
+    </div>
     <%}%>
