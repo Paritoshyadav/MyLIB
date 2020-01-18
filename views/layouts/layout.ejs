@@ -15,15 +15,19 @@
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src="/javascripts/fileUpload.js"></script>
     
-
+    <link rel="stylesheet" href="/stylesheets/main.css">
     <title>MyLIb</title>
 </head>
 <body>
+    <div class="container">
     
     <%- include('../partials/header.ejs') %>
+    <div class="inner-container"></div>
     <%- include('../partials/errormsg.ejs') %>
     
     <%- body %>
+    </div>
+</div>
 
 </body>
 </html>
